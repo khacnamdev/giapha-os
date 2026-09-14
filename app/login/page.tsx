@@ -153,9 +153,24 @@ export default function LoginPage() {
         <div className='absolute bottom-[0%] left-[-10%] h-[60vw] max-h-[800px] w-[60vw] max-w-[800px] rounded-full bg-rose-200/20 mix-blend-multiply blur-[120px]' />
       </div>
 
-      <div className='absolute top-6 right-6 z-20'>
-        <LanguageSwitcher />
-      </div>
+      <header className='relative z-20 flex w-full items-center justify-between gap-3 px-4 pt-6 sm:px-6'>
+        <Link
+          href='/'
+          className='group flex shrink-0 items-center gap-2 rounded-full border border-stone-200 bg-white/60 px-4 py-2.5 text-sm font-medium text-stone-500 transition-all duration-300 hover:border-stone-300 hover:text-stone-900 sm:px-5'>
+          <ArrowLeft className='size-4 transition-transform group-hover:-translate-x-1' />
+          {t('home')}
+        </Link>
+
+        <div className='flex shrink-0 items-center gap-2 sm:gap-3'>
+          <LanguageSwitcher />
+          <Link
+            href='/about'
+            className='group flex items-center gap-2 rounded-full border border-stone-200 bg-white/60 px-4 py-2.5 text-sm font-medium text-stone-500 transition-all duration-300 hover:border-stone-300 hover:text-stone-900 sm:px-5'>
+            <Info className='size-4 transition-transform group-hover:scale-110' />
+            {t('about')}
+          </Link>
+        </div>
+      </header>
 
       <div className='relative z-10 flex w-full flex-1 items-center justify-center px-4 py-12'>
         <motion.div
@@ -417,20 +432,6 @@ export default function LoginPage() {
           </form>
         </motion.div>
       </div>
-
-      <Link
-        href='/'
-        className='group absolute top-6 left-6 z-20 flex items-center gap-2 rounded-full border border-stone-200 bg-white/60 px-5 py-2.5 text-sm font-medium text-stone-500 transition-all duration-300 hover:border-stone-300 hover:text-stone-900'>
-        <ArrowLeft className='size-4 transition-transform group-hover:-translate-x-1' />
-        {t('home')}
-      </Link>
-
-      <Link
-        href='/about'
-        className='group absolute top-6 right-6 z-20 flex items-center gap-2 rounded-full border border-stone-200 bg-white/60 px-5 py-2.5 text-sm font-medium text-stone-500 transition-all duration-300 hover:border-stone-300 hover:text-stone-900'>
-        <Info className='size-4 transition-transform group-hover:scale-110' />
-        {t('about')}
-      </Link>
 
       <Footer className='relative z-10 mt-auto border-none bg-transparent' />
     </div>
