@@ -1,15 +1,16 @@
 'use client'
 
-import config from '@/app/config'
-import Footer from '@/components/Footer'
-import LanguageSwitcher from '@/components/LanguageSwitcher'
-import { useI18n } from '@/lib/i18n/I18nProvider'
-import { createClient } from '@/utils/supabase/client'
 import { AnimatePresence, motion } from 'framer-motion'
 import { ArrowLeft, Info, KeyRound, Mail, Shield, UserPlus } from 'lucide-react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useMemo, useState } from 'react'
+
+import config from '@/app/config'
+import Footer from '@/components/Footer'
+import LanguageSwitcher from '@/components/LanguageSwitcher'
+import { useI18n } from '@/lib/i18n/I18nProvider'
+import { createClient } from '@/utils/supabase/client'
 
 const ssoGuideUrl =
   'https://github.com/homielab/giapha-os#đăng-nhập-bằng-google-và-facebook'
